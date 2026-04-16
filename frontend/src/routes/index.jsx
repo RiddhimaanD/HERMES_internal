@@ -18,6 +18,7 @@ import PatientRecordDetail from '../pages/patient/RecordDetail'
 import PatientDoctors from '../pages/patient/Doctors'
 import PatientProfile from '../pages/patient/Profile'
 
+
 import DoctorCompleteProfile from '../pages/doctor/CompleteProfile'
 import DoctorDashboard from '../pages/doctor/Dashboard'
 import DoctorAppointments from '../pages/doctor/Appointments'
@@ -27,15 +28,7 @@ import DoctorPatients from '../pages/doctor/Patients'
 import DoctorPatientDetail from '../pages/doctor/PatientDetail'
 import DoctorAvailability from '../pages/doctor/Availability'
 import DoctorProfile from '../pages/doctor/Profile'
-import AdminDashboard from '../pages/admin/Dashboard'
-import AdminUsers from '../pages/admin/Users'
-import AdminUserDetail from '../pages/admin/UserDetail'
-import AdminAppointments from '../pages/admin/Appointments'
-import AdminAppointmentDetail from '../pages/admin/AppointmentDetail'
-import AdminRecords from '../pages/admin/Records'
-import AdminRecordDetail from '../pages/admin/RecordDetail'
-import AdminAvailability from '../pages/admin/Availability'
-import AdminProfile from '../pages/admin/Profile'
+
 
 export const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -46,6 +39,7 @@ export const router = createBrowserRouter([
   { path: '/unauthorized', element: <Unauthorized /> },
 
   { path: '/patient/complete-profile', element: <PatientCompleteProfile /> },
+
   {
     path: '/patient',
     element: <RoleGuard role="patient"><PatientDashboard /></RoleGuard>,
@@ -79,7 +73,6 @@ export const router = createBrowserRouter([
     element: <RoleGuard role="patient"><PatientProfile /></RoleGuard>,
   },
 
-  { path: '/doctor/complete-profile', element: <DoctorCompleteProfile /> },
   {
     path: '/doctor',
     element: <RoleGuard role="doctor"><DoctorDashboard /></RoleGuard>,
@@ -112,40 +105,5 @@ export const router = createBrowserRouter([
     path: '/doctor/profile',
     element: <RoleGuard role="doctor"><DoctorProfile /></RoleGuard>,
   },
-  {
-    path: '/admin',
-    element: <RoleGuard role="admin"><AdminDashboard /></RoleGuard>,
-  },
-  {
-    path: '/admin/users',
-    element: <RoleGuard role="admin"><AdminUsers /></RoleGuard>,
-  },
-  {
-    path: '/admin/users/:id',
-    element: <RoleGuard role="admin"><AdminUserDetail /></RoleGuard>,
-  },
-  {
-    path: '/admin/appointments',
-    element: <RoleGuard role="admin"><AdminAppointments /></RoleGuard>,
-  },
-  {
-    path: '/admin/appointments/:id',
-    element: <RoleGuard role="admin"><AdminAppointmentDetail /></RoleGuard>,
-  },
-  {
-    path: '/admin/records',
-    element: <RoleGuard role="admin"><AdminRecords /></RoleGuard>,
-  },
-  {
-    path: '/admin/records/:id',
-    element: <RoleGuard role="admin"><AdminRecordDetail /></RoleGuard>,
-  },
-  {
-    path: '/admin/availability',
-    element: <RoleGuard role="admin"><AdminAvailability /></RoleGuard>,
-  },
-  {
-    path: '/admin/profile',
-    element: <RoleGuard role="admin"><AdminProfile /></RoleGuard>,
-  },
+  { path: '/doctor/complete-profile', element: <DoctorCompleteProfile /> },
 ])
